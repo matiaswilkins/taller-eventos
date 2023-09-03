@@ -1,8 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const divContainer = document.querySelector(".container");
+  const divContainer = document.querySelector(".container");
+  const button = document.querySelector("button");
+
   
-    // Agregar un manejador de eventos para el click en el div
-    divContainer.addEventListener("click", function () {
-      alert("Hola! Soy el div");
-    });
-  });
+  function manejarClicEnBoton(event) {
+    event.stopPropagation(); 
+    alert("Has hecho clic en el botón");
+  }
+
+  
+  function manejarClicEnDiv() {
+    alert("Has hecho clic en el div");
+  }
+
+  
+  button.addEventListener("click", manejarClicEnBoton);
+  divContainer.addEventListener("click", manejarClicEnDiv);
+});
